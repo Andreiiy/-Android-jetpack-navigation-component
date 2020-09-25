@@ -1,5 +1,6 @@
 package com.atatar.navigationexample
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -32,6 +33,10 @@ class OneFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        button.setOnClickListener({view?.findNavController()?.navigate(R.id.twoFragment)})
+        button.setOnClickListener {
+            //view?.findNavController()?.navigate(R.id.twoFragment)
+            val intent = Intent(context,BottomNavActivity::class.java)
+                 startActivity(intent)
+        }
     }
 }
